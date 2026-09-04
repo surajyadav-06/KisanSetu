@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+ai-service/venv/
+ai-service/__pycache__/
+
+# Production builds
+dist/
+frontend/dist/
+build/
+
+# Environment & Vercel
+.env
+.env.local
+.env.*.local
+.vercel
+
+# Database files & logs
+*.sqlite-wal
+*.sqlite-shm
+*.log
+npm-debug.log*
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

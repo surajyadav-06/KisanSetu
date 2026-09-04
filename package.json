@@ -1,0 +1,14 @@
+{
+  "name": "kisansetu-platform",
+  "version": "1.0.0",
+  "description": "KisanSetu: AI-Powered Direct Farm-to-Market Platform for Indian Agriculture",
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run start",
+    "dev:ai": "cd ai-service && python app.py",
+    "build:frontend": "cd frontend && npm run build"
+  },
+  "keywords": ["agriculture", "ai", "smart-india-hackathon", "supply-chain", "logistics", "fpo"],
+  "author": "KisanSetu Team",
+  "license": "MIT"
+}
