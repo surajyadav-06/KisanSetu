@@ -131,7 +131,7 @@ export const MarketplaceView: React.FC = () => {
           spread: 70,
           origin: { y: 0.6 }
         });
-      } catch (e) {}
+      } catch (e) { }
 
       showToast('success', 'Direct Order Confirmed!', 'Farm harvest scheduled. Guaranteed fresh dispatch directly to your doorstep.');
       setCart([]);
@@ -165,9 +165,9 @@ export const MarketplaceView: React.FC = () => {
               <ShoppingCart size={22} />
             </div>
             <div>
-              <h1 style={{ fontSize: '1.75rem', fontWeight: 800 }}>Direct from Farmer Marketplace</h1>
+              <h1 style={{ fontSize: '1.75rem', fontWeight: 800 }}>Direct Farm-to-Consumer Marketplace</h1>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
-                Buy fresh produce directly from verified farmers at fair prices.
+                Buy fresh harvest directly from verified Maharashtra farmers & FPOs at transparent farmgate rates.
               </p>
             </div>
           </div>
@@ -180,7 +180,7 @@ export const MarketplaceView: React.FC = () => {
           style={{ position: 'relative', boxShadow: '0 4px 14px rgba(21, 128, 61, 0.35)' }}
         >
           <ShoppingCart size={18} />
-          <span>My Basket ({cart.length})</span>
+          <span>My Farm Basket ({cart.length})</span>
           {cart.length > 0 && (
             <span style={{
               position: 'absolute',
@@ -361,7 +361,7 @@ export const MarketplaceView: React.FC = () => {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <ShoppingCart size={22} color="#15803d" />
-                <h2 style={{ fontSize: '1.25rem' }}>Your Basket</h2>
+                <h2 style={{ fontSize: '1.25rem' }}>Your Direct Farm Basket</h2>
               </div>
               <button onClick={() => setIsCartOpen(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#94a3b8' }}>
                 <X size={20} />
@@ -421,18 +421,18 @@ export const MarketplaceView: React.FC = () => {
                   marginBottom: '1.5rem'
                 }}>
                   <div style={{ fontWeight: 700, color: '#166534', marginBottom: '4px' }}>
-                    🌱 Price Details:
+                    🌱 Transparent Price Breakdown:
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', color: '#19271d' }}>
-                    <span>Money to Farmer:</span>
+                    <span>Farmer Direct Realization:</span>
                     <strong>₹{subtotal.toFixed(2)} (86%)</strong>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', color: '#4b5a50' }}>
-                    <span>Delivery Cost:</span>
+                    <span>Direct Cold-Chain Transit:</span>
                     <span>₹{deliveryFee.toFixed(2)}</span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', color: '#4b5a50' }}>
-                    <span>Platform Fee:</span>
+                    <span>KisanSetu Platform & Escrow:</span>
                     <span>₹{platformFee.toFixed(2)}</span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 800, fontSize: '1rem', color: '#15803d', borderTop: '1px solid #bbf7d0', paddingTop: '6px', marginTop: '4px' }}>
@@ -448,7 +448,7 @@ export const MarketplaceView: React.FC = () => {
                   style={{ width: '100%', justifyContent: 'center' }}
                 >
                   <CreditCard size={18} />
-                  <span>{isCheckingOut ? 'Placing Order...' : `Place Order (₹${grandTotal.toFixed(2)})`}</span>
+                  <span>{isCheckingOut ? 'Scheduling Farm Order...' : `Place Direct Farm Order (₹${grandTotal.toFixed(2)})`}</span>
                 </button>
               </div>
             ) : (
