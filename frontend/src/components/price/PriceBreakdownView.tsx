@@ -51,15 +51,14 @@ export const PriceBreakdownView: React.FC = () => {
   };
 
   const breakdownItems = priceData?.breakdown || [
-    { component: 'Farmer Direct Realization', amount: 27, unit: '₹/kg', percentage: 84.4, color: '#15803d', description: 'Direct payout to farmer bank account' },
-    { component: 'Aggregation & Sorting / QC', amount: 1, unit: '₹/kg', percentage: 3.1, color: '#f59e0b', description: 'Quality inspection & batch crate tagging' },
-    { component: 'Cold-Chain & Route Logistics', amount: 2, unit: '₹/kg', percentage: 6.3, color: '#0284c7', description: 'Multi-pickup temperature-controlled Reefer transit' },
-    { component: 'KisanSetu Platform Service', amount: 1, unit: '₹/kg', percentage: 3.1, color: '#8b5cf6', description: 'AI demand engine, smart contracts & escrow' },
-    { component: 'Handling & Protective Crates', amount: 1, unit: '₹/kg', percentage: 3.1, color: '#64748b', description: 'Sanitized food-grade crates & handling' }
+    { component: 'Direct Payout to Farmer', amount: 28.0, unit: '₹/kg', percentage: 86.2, color: '#15803d', description: '100% direct bank realization for harvest' },
+    { component: 'Refrigerated Cold-Chain Transit', amount: 2.8, unit: '₹/kg', percentage: 8.6, color: '#0284c7', description: 'Fuel, refrigerated vehicle & driver' },
+    { component: 'Handling & Crate Loading', amount: 1.0, unit: '₹/kg', percentage: 3.1, color: '#b45309', description: 'Aggregated sorting & crate loading' },
+    { component: 'Platform Escrow Protection', amount: 0.7, unit: '₹/kg', percentage: 2.1, color: '#6d28d9', description: 'KisanSetu quality assurance & escrow' }
   ];
 
-  const total = priceData?.buyerPricePerKg || 32;
-  const farmerPayout = priceData?.farmerPayoutPerKg || 27;
+  const total = priceData?.buyerPricePerKg || 32.5;
+  const farmerPayout = priceData?.farmerPayoutPerKg || 28.0;
 
   return (
     <div style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
@@ -148,7 +147,7 @@ export const PriceBreakdownView: React.FC = () => {
               ₹{(500 * farmerPayout).toLocaleString()} <span style={{ fontSize: '1.15rem', fontWeight: 600 }}>(@ ₹{farmerPayout}/kg)</span>
             </div>
             <div style={{ fontSize: '0.875rem', color: '#15803d', fontWeight: 600, marginTop: '4px' }}>
-              ✓ You retain <strong>84.4%</strong> of the total buyer purchase price. Zero commission deductions.
+              ✓ You retain <strong>86.2%</strong> of the total buyer purchase price. Zero commission deductions.
             </div>
           </div>
 

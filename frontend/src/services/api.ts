@@ -318,31 +318,30 @@ const DEFAULT_DEMAND_FORECAST: DemandForecast = {
 const DEFAULT_PRICE_BREAKDOWN: PriceBreakdownResponse = {
   success: true,
   crop: 'Tomato',
-  buyerPricePerKg: 32.0,
-  farmerPayoutPerKg: 27.0,
+  buyerPricePerKg: 32.5,
+  farmerPayoutPerKg: 28.0,
   breakdown: [
-    { component: 'Farmer Base Realization', amount: 27.0, unit: '₹/kg', percentage: 84.4, color: '#15803d', description: 'Direct payout to farmer bank account' },
-    { component: 'Refrigerated Transit Fee', amount: 2.0, unit: '₹/kg', percentage: 6.25, color: '#0284c7', description: 'Cold-chain vehicle transport' },
-    { component: 'Aggregation Fee', amount: 1.0, unit: '₹/kg', percentage: 3.125, color: '#b45309', description: 'FPO aggregation hub management' },
-    { component: 'Handling & Crate Loading', amount: 1.0, unit: '₹/kg', percentage: 3.125, color: '#6d28d9', description: 'Quality sorting & loading' },
-    { component: 'KisanSetu Platform Fee', amount: 1.0, unit: '₹/kg', percentage: 3.125, color: '#047857', description: 'Escrow & platform services' }
+    { component: 'Direct Payout to Farmer', amount: 28.0, unit: '₹/kg', percentage: 86.2, color: '#15803d', description: '100% direct bank realization for harvest' },
+    { component: 'Refrigerated Cold-Chain Transit', amount: 2.8, unit: '₹/kg', percentage: 8.6, color: '#0284c7', description: 'Fuel, refrigerated vehicle & driver' },
+    { component: 'Handling & Crate Loading', amount: 1.0, unit: '₹/kg', percentage: 3.1, color: '#b45309', description: 'Aggregated sorting & crate loading' },
+    { component: 'Platform Escrow Protection', amount: 0.7, unit: '₹/kg', percentage: 2.1, color: '#6d28d9', description: 'KisanSetu quality assurance & escrow' }
   ],
   comparison: {
     traditionalConsumerPrice: 48.0,
     traditionalFarmerRealization: 16.0,
-    middlemanLeakageSaved: 16.0,
-    farmerGainPercentage: '68.7%',
-    buyerSavingPercentage: '33.3%'
+    middlemanLeakageSaved: 15.5,
+    farmerGainPercentage: '75%',
+    buyerSavingPercentage: '32%'
   },
   farmerViewExample: {
     quantityKg: 500,
-    expectedNetEarnings: 13500,
+    expectedNetEarnings: 14000,
     guaranteedDirectPayout: true
   },
   buyerViewExample: {
     quantityKg: 500,
-    totalLandedCost: 16000,
-    breakdownTotal: 16000
+    totalLandedCost: 16250,
+    breakdownTotal: 16250
   }
 };
 
