@@ -33,9 +33,10 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
+// Authentic 1:1 Sample Produce Data matching localhost seedData.js
 export const DEFAULT_PRODUCE: Produce[] = [
   {
-    id: 5,
+    id: 7,
     user_id: 5,
     farmer_name: 'Balasaheb Kadam',
     crop_name: 'Banana',
@@ -55,7 +56,7 @@ export const DEFAULT_PRODUCE: Produce[] = [
     status: 'Available'
   },
   {
-    id: 4,
+    id: 6,
     user_id: 2,
     farmer_name: 'Suresh Shinde (Farmer B)',
     crop_name: 'Grapes',
@@ -75,7 +76,7 @@ export const DEFAULT_PRODUCE: Produce[] = [
     status: 'Available'
   },
   {
-    id: 3,
+    id: 5,
     user_id: 4,
     farmer_name: 'Anand Jadhav',
     crop_name: 'Potato',
@@ -92,6 +93,26 @@ export const DEFAULT_PRODUCE: Produce[] = [
     longitude: 74.7496,
     description: 'Firm, dry-washed Jyoti variety potatoes suitable for culinary chips and retail consumption.',
     image_url: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=600&q=80',
+    status: 'Available'
+  },
+  {
+    id: 4,
+    user_id: 1,
+    farmer_name: 'Ramesh Patil (Demo Farmer)',
+    crop_name: 'Onion',
+    category: 'Vegetables',
+    quantity_available: 750,
+    unit: 'kg',
+    grade: 'Grade A',
+    perishability: 'Low',
+    harvest_date: '2026-09-02',
+    available_from: '2026-09-05',
+    expected_price: 22.0,
+    location: 'Nashik, Maharashtra',
+    latitude: 20.0059,
+    longitude: 73.7898,
+    description: 'Medium to large cured red onions from Lasalgaon belt with low moisture content.',
+    image_url: 'https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?auto=format&fit=crop&w=600&q=80',
     status: 'Available'
   },
   {
@@ -116,22 +137,42 @@ export const DEFAULT_PRODUCE: Produce[] = [
   },
   {
     id: 2,
-    user_id: 1,
-    farmer_name: 'Ramesh Patil (Demo Farmer)',
-    crop_name: 'Onion',
+    user_id: 2,
+    farmer_name: 'Suresh Shinde (Farmer B)',
+    crop_name: 'Tomato',
     category: 'Vegetables',
-    quantity_available: 750,
+    quantity_available: 300,
     unit: 'kg',
     grade: 'Grade A',
-    perishability: 'Low',
-    harvest_date: '2026-09-02',
-    available_from: '2026-09-05',
-    expected_price: 22.0,
+    perishability: 'High',
+    harvest_date: '2026-09-07',
+    available_from: '2026-09-10',
+    expected_price: 27.0,
     location: 'Nashik, Maharashtra',
-    latitude: 20.0059,
-    longitude: 73.7898,
-    description: 'Medium to large cured red onions from Lasalgaon belt with low moisture content.',
-    image_url: 'https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?auto=format&fit=crop&w=600&q=80',
+    latitude: 19.9975,
+    longitude: 73.7910,
+    description: 'Greenhouse grown premium Grade-A tomatoes, pesticide residue tested.',
+    image_url: 'https://images.unsplash.com/photo-1582284540020-8acbe03f4924?auto=format&fit=crop&w=600&q=80',
+    status: 'Available'
+  },
+  {
+    id: 3,
+    user_id: 3,
+    farmer_name: 'Vikas Gaikwad (Farmer C)',
+    crop_name: 'Tomato',
+    category: 'Vegetables',
+    quantity_available: 200,
+    unit: 'kg',
+    grade: 'Grade A',
+    perishability: 'High',
+    harvest_date: '2026-09-08',
+    available_from: '2026-09-10',
+    expected_price: 29.0,
+    location: 'Pune, Maharashtra',
+    latitude: 18.5204,
+    longitude: 73.8567,
+    description: 'Hydroponic and drip irrigated hybrid tomatoes, uniform size and blemish-free.',
+    image_url: 'https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=600&q=80',
     status: 'Available'
   }
 ];
@@ -179,14 +220,15 @@ const DEFAULT_REQUIREMENTS: BuyerRequirement[] = [
   {
     id: 1,
     buyer_id: 7,
-    buyer_name: 'Taj Hotels & Fresh Mart',
+    buyer_name: 'Taj Hospitality Group',
+    buyer_org: 'Taj Luxury Hotels & Mumbai Fresh Mart',
     crop_name: 'Tomato',
     required_quantity: 1000,
     unit: 'kg',
     required_grade: 'Grade A',
-    max_price: 32.0,
-    delivery_location: 'Mumbai, Maharashtra',
-    required_date: '2026-09-12',
+    max_price: 30.0,
+    delivery_location: 'Mumbai Central Logistics Hub',
+    required_date: '2026-09-10',
     urgency: 'High',
     status: 'Open'
   }
@@ -276,30 +318,31 @@ const DEFAULT_DEMAND_FORECAST: DemandForecast = {
 const DEFAULT_PRICE_BREAKDOWN: PriceBreakdownResponse = {
   success: true,
   crop: 'Tomato',
-  buyerPricePerKg: 32.5,
-  farmerPayoutPerKg: 28.0,
+  buyerPricePerKg: 32.0,
+  farmerPayoutPerKg: 27.0,
   breakdown: [
-    { component: 'Direct Payout to Farmer', amount: 28.0, unit: '₹/kg', percentage: 86.2, color: '#15803d', description: '100% direct bank realization for harvest' },
-    { component: 'Refrigerated Cold-Chain Transit', amount: 2.8, unit: '₹/kg', percentage: 8.6, color: '#0284c7', description: 'Fuel, refrigerated vehicle & driver' },
-    { component: 'Handling & Crate Loading', amount: 1.0, unit: '₹/kg', percentage: 3.1, color: '#b45309', description: 'Aggregated sorting & crate loading' },
-    { component: 'Platform Escrow Protection', amount: 0.7, unit: '₹/kg', percentage: 2.1, color: '#6d28d9', description: 'KisanSetu quality assurance & escrow' }
+    { component: 'Farmer Base Realization', amount: 27.0, unit: '₹/kg', percentage: 84.4, color: '#15803d', description: 'Direct payout to farmer bank account' },
+    { component: 'Refrigerated Transit Fee', amount: 2.0, unit: '₹/kg', percentage: 6.25, color: '#0284c7', description: 'Cold-chain vehicle transport' },
+    { component: 'Aggregation Fee', amount: 1.0, unit: '₹/kg', percentage: 3.125, color: '#b45309', description: 'FPO aggregation hub management' },
+    { component: 'Handling & Crate Loading', amount: 1.0, unit: '₹/kg', percentage: 3.125, color: '#6d28d9', description: 'Quality sorting & loading' },
+    { component: 'KisanSetu Platform Fee', amount: 1.0, unit: '₹/kg', percentage: 3.125, color: '#047857', description: 'Escrow & platform services' }
   ],
   comparison: {
     traditionalConsumerPrice: 48.0,
     traditionalFarmerRealization: 16.0,
-    middlemanLeakageSaved: 15.5,
-    farmerGainPercentage: '75%',
-    buyerSavingPercentage: '32%'
+    middlemanLeakageSaved: 16.0,
+    farmerGainPercentage: '68.7%',
+    buyerSavingPercentage: '33.3%'
   },
   farmerViewExample: {
     quantityKg: 500,
-    expectedNetEarnings: 14000,
+    expectedNetEarnings: 13500,
     guaranteedDirectPayout: true
   },
   buyerViewExample: {
     quantityKg: 500,
-    totalLandedCost: 16250,
-    breakdownTotal: 16250
+    totalLandedCost: 16000,
+    breakdownTotal: 16000
   }
 };
 
@@ -307,7 +350,7 @@ const DEFAULT_ROUTE_STOPS: RouteStop[] = [
   {
     stopOrder: 1,
     stopType: 'PICKUP',
-    locationName: 'Nashik Farm A',
+    locationName: 'Ramesh Patil Farm (Nashik)',
     farmerName: 'Ramesh Patil',
     cropName: 'Tomato',
     quantityKg: 500,
@@ -319,15 +362,28 @@ const DEFAULT_ROUTE_STOPS: RouteStop[] = [
   },
   {
     stopOrder: 2,
-    stopType: 'DELIVERY',
-    locationName: 'Mumbai Market',
-    farmerName: 'Taj Hotels',
+    stopType: 'PICKUP',
+    locationName: 'Suresh Shinde Farm (Nashik)',
+    farmerName: 'Suresh Shinde',
     cropName: 'Tomato',
-    quantityKg: 500,
-    lat: 18.922,
-    lng: 72.833,
-    arrivalWindow: '11:30 AM',
-    action: 'Unload & Deliver',
+    quantityKg: 300,
+    lat: 19.9975,
+    lng: 73.7910,
+    arrivalWindow: '09:15 AM',
+    action: 'Load 300kg Grade-A Tomatoes',
+    status: 'Completed'
+  },
+  {
+    stopOrder: 3,
+    stopType: 'DELIVERY',
+    locationName: 'Taj Hotels Central Hub (Mumbai)',
+    farmerName: 'Taj Hospitality',
+    cropName: 'Tomato',
+    quantityKg: 800,
+    lat: 18.9220,
+    lng: 72.8330,
+    arrivalWindow: '12:30 PM',
+    action: 'Unload & Quality Verification',
     status: 'En Route'
   }
 ];
@@ -340,9 +396,9 @@ const DEFAULT_OPTIMIZED_ROUTE: OptimizedRoute = {
     registration: 'MH-15-EG-4482',
     driverName: 'Sanjay Deshmukh',
     capacityKg: 2000,
-    loadedKg: 1000,
-    utilizationPercentage: 50,
-    temperatureSetting: '4°C to 8°C (Monitored)'
+    loadedKg: 800,
+    utilizationPercentage: 40,
+    temperatureSetting: '4°C to 8°C (Active)'
   },
   metrics: {
     estimatedDistanceKm: 168.4,
@@ -539,13 +595,13 @@ export const buyerService = {
       const req: BuyerRequirement = {
         id: Date.now(),
         buyer_id: data.buyer_id || 7,
-        buyer_name: data.buyer_name || 'Taj Hotels & Fresh Mart',
+        buyer_name: data.buyer_name || 'Taj Hospitality Group',
         crop_name: data.crop_name || 'Tomato',
         required_quantity: Number(data.required_quantity) || 500,
         unit: data.unit || 'kg',
         required_grade: data.required_grade || 'Grade A',
         max_price: Number(data.max_price) || 32,
-        delivery_location: data.delivery_location || 'Mumbai, Maharashtra',
+        delivery_location: data.delivery_location || 'Mumbai Central Logistics Hub',
         required_date: data.required_date || '2026-09-15',
         urgency: data.urgency || 'Normal',
         status: 'Open'
