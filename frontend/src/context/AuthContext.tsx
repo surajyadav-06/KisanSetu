@@ -26,13 +26,40 @@ const DEFAULT_DEMO_USERS: User[] = [
     avatar: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=150&q=80'
   },
   {
-    id: 7,
-    full_name: 'Taj Hotels & Fresh Mart (Demo Bulk Buyer)',
-    email: 'buyer@kisansetu.in',
-    mobile: '+91 98200 44556',
-    role: 'Bulk Buyer',
-    location: 'Nariman Point, Mumbai',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80'
+    id: 2,
+    full_name: 'Suresh Shinde (Farmer B)',
+    email: 'suresh.shinde@kisansetu.in',
+    mobile: '+91 98221 55663',
+    role: 'Farmer',
+    location: 'Nashik, Maharashtra',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'
+  },
+  {
+    id: 3,
+    full_name: 'Vikas Gaikwad (Farmer C)',
+    email: 'vikas.gaikwad@kisansetu.in',
+    mobile: '+91 94223 88990',
+    role: 'Farmer',
+    location: 'Pune, Maharashtra',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80'
+  },
+  {
+    id: 4,
+    full_name: 'Anand Jadhav',
+    email: 'anand.jadhav@kisansetu.in',
+    mobile: '+91 98902 44331',
+    role: 'Farmer',
+    location: 'Ahmednagar, Maharashtra',
+    avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=150&q=80'
+  },
+  {
+    id: 5,
+    full_name: 'Balasaheb Kadam',
+    email: 'balasaheb.kadam@kisansetu.in',
+    mobile: '+91 97654 32109',
+    role: 'Farmer',
+    location: 'Satara, Maharashtra',
+    avatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=150&q=80'
   },
   {
     id: 6,
@@ -42,6 +69,15 @@ const DEFAULT_DEMO_USERS: User[] = [
     role: 'FPO',
     location: 'Nashik Agro Hub',
     avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80'
+  },
+  {
+    id: 7,
+    full_name: 'Taj Hotels & Fresh Mart (Demo Bulk Buyer)',
+    email: 'buyer@kisansetu.in',
+    mobile: '+91 98200 44556',
+    role: 'Bulk Buyer',
+    location: 'Nariman Point, Mumbai',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80'
   },
   {
     id: 8,
